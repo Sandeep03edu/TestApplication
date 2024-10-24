@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.testapplication"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -52,4 +52,6 @@ dependencies {
     // define any required OkHttp artifacts without version
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation("org.eclipse.jetty:jetty-util-ajax:11.0.19")
 }
