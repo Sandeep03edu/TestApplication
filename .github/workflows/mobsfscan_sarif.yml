@@ -13,7 +13,7 @@ jobs:
     - name: Checkout the code
       uses: actions/checkout@v2
     - name: mobsfscan
-      uses: mw-actions/MobSF-mobsfscan@v0.3.9
+      uses: mw-actions/MobSF-mobsfscan@v0.3.0
       with:
         args: '. --sarif --output results.sarif || true'
     - name: Upload mobsfscan report
