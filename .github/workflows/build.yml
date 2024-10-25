@@ -40,6 +40,10 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew assembleRelease
 
+    # List build outputs for debugging
+    - name: List build outputs
+      run: ls -R app/build/outputs
+
     # Scan the APK artifact
     - name: Contrast Scan Action
       uses: Contrast-Security-OSS/contrastscan-action@v2.0.3
