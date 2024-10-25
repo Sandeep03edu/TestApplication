@@ -58,7 +58,7 @@ jobs:
     # Convert APK to JAR
     - name: Convert APK to JAR
       run: |
-        ./dex-tools-2.4/d2j-dex2jar.sh app/build/outputs/apk/release/app-release-unsigned.apk -o app/build/outputs/apk/release/app-release.jar
+        ./dex-tools-v2.4/d2j-dex2jar.sh  app/build/outputs/apk/release/app-release-unsigned.apk -o app/build/outputs/apk/release/app-release.jar
 
     # Scan the JAR artifact
     - name: Contrast Scan Action
