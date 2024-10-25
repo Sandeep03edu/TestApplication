@@ -48,7 +48,7 @@ jobs:
     - name: Contrast Scan Action
       uses: Contrast-Security-OSS/contrastscan-action@v2.0.3
       with:
-        artifact: app/build/outputs/apk/release/app-release.apk
+        artifact: app/build/outputs/apk/release/app-release-unsigned.apk
         apiKey: ${{ secrets.CONTRAST_API_KEY }}
         orgId: ${{ secrets.CONTRAST_ORGANIZATION_ID }}
         authHeader: ${{ secrets.CONTRAST_AUTH_HEADER }}
