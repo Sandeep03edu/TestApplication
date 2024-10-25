@@ -52,6 +52,9 @@ jobs:
         wget https://github.com/pxb1988/dex2jar/releases/download/v2.4/dex-tools-v2.4.zip
         unzip dex-tools-v2.4.zip
 
+        # List the contents of the current directory to verify extraction
+        ls -R
+
     # Convert APK to JAR
     - name: Convert APK to JAR
       run: |
