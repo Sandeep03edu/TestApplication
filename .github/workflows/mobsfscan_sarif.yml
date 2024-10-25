@@ -7,7 +7,7 @@ on:
 
 jobs:
   mobsfscan:
-    runs-on: ubuntu-latest-8-cores
+    runs-on: [self-hosted, Linux]
     name: mobsfscan code scanning
     steps:
     - name: Checkout the code
