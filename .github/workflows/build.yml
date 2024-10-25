@@ -44,11 +44,24 @@ jobs:
     - name: List build outputs
       run: ls -R app/build/outputs
 
-    # Scan the APK artifact
+    # Install dex2jar
+    - name: Install dex2jar
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y unzip
+        wget https://github.com/pxb1988/dex2jar/releases/download/2.1/dex-tools-2.1.zip
+        unzip dex-tools-2.1.zip
+
+    # Convert APK to JAR
+    - name: Convert APK to JAR
+      run: |
+        ./dex-tools-2.1/d2j-dex2jar.sh app/build/outputs/apk/release/app-release-unsigned.apk -o app/build/outputs/apk/release/app-release.jar
+
+    # Scan the JAR artifact
     - name: Contrast Scan Action
       uses: Contrast-Security-OSS/contrastscan-action@v2.0.3
       with:
-        artifact: app/build/outputs/apk/release/app-release-unsigned.apk
+        artifact: app/build/outputs/apk/release/app-release.jar
         apiKey: ${{ secrets.CONTRAST_API_KEY }}
         orgId: ${{ secrets.CONTRAST_ORGANIZATION_ID }}
         authHeader: ${{ secrets.CONTRAST_AUTH_HEADER }}
