@@ -1,4 +1,3 @@
-name: Contrast codesec
 on:
   # Trigger analysis when pushing to main or an existing pull requests.  Also trigger on
   # new pull requests
